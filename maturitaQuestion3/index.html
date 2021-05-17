@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATURITA 3 !!!!</title>
+</head>
+<body>
+    <form action="#">
+        <input type="email" id="email" onkeyup="checkEmail();">
+        <input type="text" id="class" onkeyup="checkClass();">
+    </form>
+    <span id="status"></span>
+
+    <script>
+        const emailDOM = document.getElementById('email');
+        const classDOM = document.getElementById('class');
+        const statusDOM = document.getElementById('status');
+        function checkEmail() {
+            if (String(emailDOM.nodeValue).match(/[a-z]+\.[a-z]+[0-9]*@sspbrno\.cz/g)) {
+                statusDOM.innerHTML = "validni email";
+            } else {
+                statusDOM.innerHTML = "INvalidni email";
+            }
+        }
+        function checkClass() {
+            if (String(classDOM.nodeValue).match(/[A-Z][1-4][A-Z]*/g)) {
+                statusDOM.innerHTML = "validni trida";
+            } else {
+                statusDOM.innerHTML = "INvalidni trida";
+            }
+        }
+    </script>
+</body>
+</html>
